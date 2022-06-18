@@ -88,7 +88,11 @@ def list_printer(items, count=0):
 
     debug += "Count after list_item_shortener loop = " + str(count) + "\n"
 
-    longest = longest_item_in_list(formatted_items)
+    if longest_item_in_list(formatted_items) < max_chars:
+        longest = max_chars
+    else:
+        longest = longest_item_in_list(formatted_items)
+
     lengthened_items = []
     for item in formatted_items:
         lengthened_items.append(item + (" " * ((longest - len(item)) + 1)))
@@ -202,8 +206,8 @@ def take_action(cwd):
         back()
 
 
-def dir_nav_chooser(cwd, choices):
-    choice = int(input(f'{cwd}: '))
+def dir_nav_chooser(choices):
+    choice = int(input(f'{str(getcwd())}: '))
     chosen_item = choices[choice]
     if chosen_item == '<':
         chdir("..")
@@ -217,7 +221,7 @@ def dir_nav_chooser(cwd, choices):
         return
 
     elif chosen_item == "takeaction":
-        take_action(cwd)
+        take_action(str(getcwd()))
         return
 
     elif chosen_item[0] == 'F':

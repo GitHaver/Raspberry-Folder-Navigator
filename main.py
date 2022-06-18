@@ -60,7 +60,7 @@ def menu_manager(directory=getcwd()):
     count += 1
     print(f'{count} - {either}')
     print()
-    dir_nav_chooser(cwd, contents)
+    dir_nav_chooser(contents)
 
 
 while __name__ == "__main__":
