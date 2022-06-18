@@ -30,7 +30,6 @@ def menu_manager(directory=getcwd()):
 
     count = 0
     folders = [d for d in Path(".").iterdir() if d.is_dir()]
-    print(f'Folder count = {len(folders)}')
     for folder in folders:
         contents.append(f'F{folder}')
     print("Folders:")
@@ -38,7 +37,6 @@ def menu_manager(directory=getcwd()):
     count = list_printer(folders)
 
     files = [f for f in Path(".").iterdir() if f.is_file()]
-    print(f'Files count = {len(files)}')
     for file in files:
         contents.append(f'f{file}')
     print()
