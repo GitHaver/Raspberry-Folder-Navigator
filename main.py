@@ -28,22 +28,19 @@ def menu_manager(directory=getcwd()):
     contents = []
     title(directory)
 
-    f = []
-    d = []
-
     count = 0
     folders = [d for d in Path(".").iterdir() if d.is_dir()]
+    print(f'Folder count = {len(folders)}')
     for folder in folders:
         contents.append(f'F{folder}')
-        count += 1
     print("Folders:")
     print()
     count = list_printer(folders)
 
     files = [f for f in Path(".").iterdir() if f.is_file()]
+    print(f'Files count = {len(files)}')
     for file in files:
         contents.append(f'f{file}')
-        count += 1
     print()
     print("Files:")
     print()
@@ -63,8 +60,6 @@ def menu_manager(directory=getcwd()):
     contents.append(either)
     count += 1
     print(f'{count} - {either}')
-    print(contents)
-    print(len(contents))
     dir_nav_chooser(cwd, contents)
 
 

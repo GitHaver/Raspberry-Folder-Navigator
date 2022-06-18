@@ -70,16 +70,23 @@ def list_item_shortener(items, max_chars):
 
 
 def list_printer(items, count=0):
-    debugger = 0
+    debugger = 1
+    debug = "\n"
+    if count == 0:
+        debug += "Count = 0\n"
+    else:
+        debug += "Count = " + str(count) + "\n"
+
     formatted_items = []
     items_per_row = 4
-    max_chars = 18
+    max_chars = 20
 
-    count
     for item in list_item_shortener(items, max_chars):
         item = f'{count}| {item}'
-        count += 1
         formatted_items.append(item)
+        count += 1
+
+    debug += "Count after list_item_shortener loop = " + str(count) + "\n"
 
     longest = longest_item_in_list(formatted_items)
     lengthened_items = []
@@ -90,12 +97,11 @@ def list_printer(items, count=0):
 
     list_index = 0
     row_iteration = 0
-    debug = "\n"
     debug += "Beginning large row loop:"
     while row_iteration < number_of_rows:
-        debug += "\n \t"
+        debug += "\n\t"
         row = ""
-        debug += "Beginning row " + str(row_iteration) + " loop: \n \t"
+        #debug += "Beginning row " + str(row_iteration) + " loop: \n \t"
         item_index = row_iteration
         item_loop = 0
         while item_loop < items_per_row:
@@ -103,10 +109,11 @@ def list_printer(items, count=0):
                 row += (lengthened_items[item_index])
                 item_index += number_of_rows
             except IndexError:
-                debug += "\tIndex error hitting " + str(item_index) + ", row " + str(row_iteration) + " is finished: \n \t \t" + row + "\n \t"
                 break
+
             item_loop += 1
             list_index += 1
+        debug += "\tRow " + str(row_iteration) + " finished: " + row
         #debug += "Ending row " + str(row_iteration) + " loop."
         row_iteration += 1
         print(row)
