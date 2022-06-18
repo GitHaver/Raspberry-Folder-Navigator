@@ -75,10 +75,10 @@ def list_printer(items, count=0):
     items_per_row = 4
     max_chars = 18
 
-    list_count = count
+    count
     for item in list_item_shortener(items, max_chars):
-        item = f'{list_count}| {item}'
-        list_count += 1
+        item = f'{count}| {item}'
+        count += 1
         formatted_items.append(item)
 
     longest = longest_item_in_list(formatted_items)
@@ -113,7 +113,7 @@ def list_printer(items, count=0):
     debug += "\n Ending outer while loop."
     if debugger == 1:
         print(debug)
-    return list_count
+    return count
 
 
 def take_action(cwd, struct):

@@ -63,6 +63,8 @@ def menu_manager(directory=getcwd()):
     contents.append(either)
     count += 1
     print(f'{count} - {either}')
+    print(contents)
+    print(len(contents))
     dir_nav_chooser(cwd, contents)
 
 
