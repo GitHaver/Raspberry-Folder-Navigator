@@ -88,7 +88,7 @@ def list_printer(items, count=0):
 
     debug += "Count after list_item_shortener loop = " + str(count) + "\n"
 
-    if longest_item_in_list(formatted_items) < max_chars:
+    if longest_item_in_list(formatted_items) <= max_chars:
         longest = max_chars
     else:
         longest = longest_item_in_list(formatted_items)
