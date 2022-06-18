@@ -44,7 +44,7 @@ def list_item_shortener(items, max_chars):
     shortened_items = []
     index = (2 * (int(ceil(max_chars / 5)))) - 1
     negative_index = 0 - index
-    word_limit = 9
+    word_limit = 8
     for unit in items:
         unit = str(unit)
         shortened_words = ""
@@ -72,8 +72,8 @@ def list_item_shortener(items, max_chars):
 def list_printer(items, count=0):
     debugger = 0
     formatted_items = []
-    items_per_row = 5
-    max_chars = 15
+    items_per_row = 4
+    max_chars = 18
 
     list_count = count
     for item in list_item_shortener(items, max_chars):
