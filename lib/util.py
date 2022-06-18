@@ -123,8 +123,10 @@ def list_printer(items, count=0):
     return count
 
 
-def take_action(cwd, struct):
-    title("Take Action", 1)
+def take_action(cwd):
+    cls()
+    title("Take Action:", 0)
+    title(cwd, 0)
     half_path = cwd + struct[1]
     print('1 - Create Folder')
     print('2 - Rename/Move Folder')
@@ -215,7 +217,7 @@ def dir_nav_chooser(cwd, choices):
         return
 
     elif chosen_item == "takeaction":
-        take_action(cwd, struct)
+        take_action(cwd)
         return
 
     elif chosen_item[0] == 'F':
