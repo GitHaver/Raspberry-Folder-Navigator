@@ -70,7 +70,7 @@ def list_item_shortener(items, max_chars):
 
 
 def list_printer(items, count=0):
-    debugger = 1
+    debugger = 0
     debug = "\n"
     if count == 0:
         debug += "Count = 0\n"
