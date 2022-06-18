@@ -79,7 +79,7 @@ def list_printer(items, count=0):
 
     formatted_items = []
     items_per_row = 5
-    max_chars = 20
+    max_chars = 15
 
     for item in list_item_shortener(items, max_chars):
         item = f'{count}| {item}'
